@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Motor Style</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Motor Style</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
+<!-- VIDEO CAPA -->
 <header class="video-header">
   <video autoplay muted loop playsinline class="bg-video">
     <source src="capa.mp4" type="video/mp4">
@@ -24,7 +25,7 @@
   </div>
 </header>
 
-
+<!-- HERO -->
 <section class="hero-parallax">
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -37,6 +38,7 @@
   </div>
 </section>
 
+<!-- PRODUTOS -->
 <section id="produtos" class="grid">
   <div class="card">
     <h3>Peças Automotivas</h3>
@@ -54,6 +56,7 @@
   </div>
 </section>
 
+<!-- SOBRE -->
 <section class="sobre">
   <h2>Sobre a Motor Style</h2>
   <p>
@@ -66,20 +69,18 @@
   <p>© 2025 Motor Style</p>
 </footer>
 
+<!-- JS -->
 <script>
 const hero = document.querySelector(".hero-parallax");
 
+// Parallax com mouse
 window.addEventListener("mousemove", (e) => {
   const x = (e.clientX / window.innerWidth - 0.5) * 25;
   const y = (e.clientY / window.innerHeight - 0.5) * 25;
-
   hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
 });
-</script>
-<script>
-const header = document.querySelector(".video-header");
-const hero = document.querySelector(".hero-parallax");
 
+// Scroll automático ao rolar
 window.addEventListener("wheel", () => {
   hero.scrollIntoView({ behavior: "smooth" });
 }, { once: true });
@@ -87,4 +88,3 @@ window.addEventListener("wheel", () => {
 
 </body>
 </html>
-
