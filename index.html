@@ -16,30 +16,16 @@
 </header>
 
 <section class="hero-parallax">
-  <div class="overlay"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <h2>Performance que vira arte</h2>
     <p>Peças automotivas, arte industrial e colecionáveis premium</p>
-    <a href="sobre.html" class="btn">Explorar</a>
+    <div class="hero-buttons">
+      <a href="#produtos" class="btn">Explorar</a>
+      <a href="sobre.html" class="btn-outline">Sobre</a>
+    </div>
   </div>
 </section>
-
-<!-- SCRIPT SEMPRE AQUI -->
-<script>
-const hero = document.querySelector(".hero-parallax");
-
-window.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 30;
-  const y = (e.clientY / window.innerHeight - 0.5) * 30;
-
-  hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
-});
-</script>
-
-</body>
-</html>
-
-
 
 <section id="produtos" class="grid">
   <div class="card">
@@ -70,6 +56,16 @@ window.addEventListener("mousemove", (e) => {
   <p>© 2025 Motor Style</p>
 </footer>
 
+<script>
+const hero = document.querySelector(".hero-parallax");
+
+window.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 25;
+  const y = (e.clientY / window.innerHeight - 0.5) * 25;
+
+  hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+});
+</script>
+
 </body>
 </html>
-
