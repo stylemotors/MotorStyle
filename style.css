@@ -247,3 +247,48 @@ footer {
   padding: 140px 15% 100px;
   text-align: center;
 }
+
+/* PROJETOS */
+.projetos-page {
+  padding: 140px 10% 100px;
+  background: #0a0a0a;
+}
+
+.projetos-page h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 80px;
+}
+
+.projeto-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.projeto-img {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #333;
+}
+
+.projeto-info h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.projeto-info p {
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* MOBILE */
+@media(max-width: 900px) {
+  .projeto-card {
+    grid-template-columns: 1fr;
+  }
+}
