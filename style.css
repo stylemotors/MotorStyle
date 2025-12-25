@@ -50,27 +50,34 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
+  background: black;
   overflow: hidden;
 }
 
+/* LETTERBOX VIDEO */
 .bg-video {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: auto;
+  height: auto;
   min-width: 100%;
   min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   transform: translate(-50%, -50%);
-  object-fit: cover;
+  object-fit: contain;
 }
 
+/* OVERLAY */
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.5);
   z-index: 1;
 }
 
-/* TEXTO NO RODAPÉ DO VÍDEO */
+/* TEXTO NO RODAPÉ */
 .video-bottom {
   position: absolute;
   bottom: 70px;
@@ -211,7 +218,7 @@ footer {
   color: #666;
 }
 
-/* ANIMAÇÕES */
+/* ANIMAÇÃO */
 @keyframes bounce {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(10px); }
