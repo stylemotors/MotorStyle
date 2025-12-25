@@ -9,17 +9,24 @@
 
 <body>
 
+<!-- MENU FLUTUANTE -->
+<nav class="top-menu">
+  <img src="logo.png" class="menu-logo">
+  <div class="menu-links">
+    <a href="#produtos">Produtos</a>
+    <a href="sobre.html">Sobre</a>
+  </div>
+</nav>
+
 <!-- VIDEO CAPA -->
 <header class="video-header">
   <video autoplay muted loop playsinline class="bg-video">
     <source src="images/capa.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
   </video>
 
   <div class="video-overlay"></div>
 
-  <div class="video-content">
-   
+  <div class="video-bottom">
     <p>Performance que vira arte</p>
     <span class="scroll-indicator">▼ Role para explorar</span>
   </div>
@@ -73,7 +80,7 @@
 <script>
 const hero = document.querySelector(".hero-parallax");
 
-// Parallax com mouse
+// Parallax
 window.addEventListener("mousemove", (e) => {
   const x = (e.clientX / window.innerWidth - 0.5) * 25;
   const y = (e.clientY / window.innerHeight - 0.5) * 25;
@@ -88,4 +95,3 @@ window.addEventListener("wheel", () => {
 
 </body>
 </html>
-
