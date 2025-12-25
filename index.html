@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Motor Style</title>
-<link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Motor Style</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <!-- MENU -->
 <nav class="top-menu">
-  <img src="logo.png" class="menu-logo">
+  <img src="logo.png" class="menu-logo" alt="Motor Style">
   <div class="menu-links">
     <a href="#produtos">Produtos</a>
     <a href="projetos.html">Projetos</a>
@@ -33,7 +33,7 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO PARALLAX -->
 <section class="hero-parallax">
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -46,21 +46,78 @@
   </div>
 </section>
 
-<!-- PRODUTOS -->
+<!-- PRODUTOS (ORIGINAL) -->
 <section id="produtos" class="grid">
   <div class="card">
     <h3>Peças Automotivas</h3>
-    <p>Componentes funcionais, protótipos e peças conceito desenvolvidas para performance real.</p>
+    <p>
+      Componentes funcionais, protótipos e peças conceito desenvolvidas
+      para performance real.
+    </p>
   </div>
 
   <div class="card">
     <h3>Arte & Colecionáveis</h3>
-    <p>Quadros, miniaturas e esculturas feitas a partir da estética automotiva.</p>
+    <p>
+      Quadros, miniaturas e esculturas feitas a partir da estética automotiva.
+    </p>
   </div>
 
   <div class="card">
     <h3>Exclusividade</h3>
-    <p>Produtos únicos criados em tiragens limitadas para verdadeiros entusiastas.</p>
+    <p>
+      Produtos únicos criados em tiragens limitadas para verdadeiros entusiastas.
+    </p>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS (NOVO) -->
+<section class="diferenciais">
+  <h2>Por que Motor Style</h2>
+
+  <div class="diferenciais-grid">
+    <div class="diferencial">
+      <h3>Engenharia Real</h3>
+      <p>
+        Nada é apenas visual. Cada peça nasce com propósito técnico e funcional.
+      </p>
+    </div>
+
+    <div class="diferencial">
+      <h3>Tiragem Limitada</h3>
+      <p>
+        Produções controladas, numeradas e com identidade própria.
+      </p>
+    </div>
+
+    <div class="diferencial">
+      <h3>Arte Funcional</h3>
+      <p>
+        O que funciona na pista também pode ocupar espaço na parede.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO (NOVO) -->
+<section class="processo">
+  <h2>Nosso Processo</h2>
+
+  <div class="processo-steps">
+    <div class="step">
+      <span>01</span>
+      <p>Conceito e design</p>
+    </div>
+
+    <div class="step">
+      <span>02</span>
+      <p>Engenharia e testes</p>
+    </div>
+
+    <div class="step">
+      <span>03</span>
+      <p>Produção e acabamento</p>
+    </div>
   </div>
 </section>
 
@@ -68,16 +125,27 @@
 <section class="sobre">
   <h2>Sobre a Motor Style</h2>
   <p>
-    A Motor Style une engenharia automotiva e arte industrial para criar peças que funcionam na pista
-    e impressionam na parede. Cada produto carrega estilo, precisão e identidade.
+    A Motor Style une engenharia automotiva e arte industrial para criar peças
+    que funcionam na pista e impressionam na parede.
+    Cada produto carrega estilo, precisão e identidade.
   </p>
 </section>
 
+<!-- CTA FINAL (NOVO) -->
+<section class="cta">
+  <h2>Quer algo exclusivo?</h2>
+  <p>
+    Desenvolvemos peças únicas sob demanda para projetos especiais.
+  </p>
+  <a href="mailto:contato@motorstyle.com" class="btn">Iniciar projeto</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <p>© 2025 Motor Style</p>
 </footer>
 
-<!-- JS -->
+<!-- JS (ORIGINAL – INTACTO) -->
 <script>
 const hero = document.querySelector(".hero-parallax");
 
