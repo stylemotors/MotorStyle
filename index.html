@@ -9,11 +9,21 @@
 
 <body>
 
-<header>
-  <img src="logo.png" class="logo">
-  <h1>MOTOR STYLE</h1>
-  <p>Performance que vira arte</p>
+<header class="video-header">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="capa.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
+
+  <div class="video-overlay"></div>
+
+  <div class="video-content">
+    <h1>MOTOR STYLE</h1>
+    <p>Performance que vira arte</p>
+    <span class="scroll-indicator">▼ Role para explorar</span>
+  </div>
 </header>
+
 
 <section class="hero-parallax">
   <div class="hero-overlay"></div>
@@ -66,6 +76,15 @@ window.addEventListener("mousemove", (e) => {
   hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
 });
 </script>
+<script>
+const header = document.querySelector(".video-header");
+const hero = document.querySelector(".hero-parallax");
+
+window.addEventListener("wheel", () => {
+  hero.scrollIntoView({ behavior: "smooth" });
+}, { once: true });
+</script>
 
 </body>
 </html>
+
