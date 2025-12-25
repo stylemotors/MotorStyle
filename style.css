@@ -32,33 +32,76 @@ header p {
   margin-top: 10px;
 }
 
-/* HERO */
-.hero {
-  padding: 80px 20px;
+/* HERO PARALLAX */
+.hero-parallax {
+  position: relative;
+  height: 100vh;
+  background-image: url("images/Master-Car-Creation.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background: linear-gradient(to right, #000, #111);
+  color: white;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
+.hero-content h2 {
+  font-size: 3rem;
+  letter-spacing: 3px;
 }
 
-.hero p {
-  color: #ccc;
+.hero-content p {
   margin: 20px 0;
+  color: #ccc;
 }
 
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+/* BOTÕES */
 .btn {
-  display: inline-block;
   padding: 15px 40px;
   border: 2px solid white;
-  color: white;
+  background: white;
+  color: black;
   text-decoration: none;
-  margin-top: 20px;
+  font-weight: bold;
   transition: 0.3s;
 }
 
 .btn:hover {
+  background: transparent;
+  color: white;
+}
+
+.btn-outline {
+  padding: 15px 40px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
   background: white;
   color: black;
 }
@@ -176,46 +219,5 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
-
-    .hero-parallax {
-  position: relative;
-  height: 100vh;
-  background-image: url("images/Master-Car-Creation.jpg");
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
-
-.hero-parallax::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-}
-
-.hero-content h2 {
-  font-size: 3rem;
-  letter-spacing: 3px;
-}
-
-.hero-content p {
-  margin: 20px 0;
-  color: #ccc;
-}
-
   }
 }
-
