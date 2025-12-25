@@ -2,98 +2,350 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Motor Style</title>
+<title>Motor Style | Performance que Vira Arte</title>
 <link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- MENU -->
+<!-- MENU PREMIUM -->
 <nav class="top-menu">
-  <img src="logo.png" class="menu-logo">
+  <a href="index.html" class="logo-link">
+    <img src="logo.png" class="menu-logo" alt="Motor Style Logo">
+    <span class="logo-text">MOTOR STYLE</span>
+  </a>
+
   <div class="menu-links">
     <a href="#produtos">Produtos</a>
     <a href="projetos.html">Projetos</a>
     <a href="sobre.html">Sobre</a>
+    <a href="#contato" class="btn-menu">Contato</a>
+  </div>
+  
+  <div class="menu-toggle">
+    <i class="fas fa-bars"></i>
   </div>
 </nav>
 
-<!-- VIDEO CAPA -->
+<!-- VIDEO HERO COM TEXTOS ANIMADOS -->
 <header class="video-header">
-  <video autoplay muted playsinline class="bg-video">
+  <div class="video-overlay-premium"></div>
+  
+  <video autoplay muted playsinline loop class="bg-video-premium">
     <source src="images/capa.mp4" type="video/mp4">
   </video>
 
-  <div class="video-overlay"></div>
-
-  <div class="video-bottom">
-    <p>Performance que vira arte</p>
-    <span class="scroll-indicator">▼ Role para explorar</span>
+  <div class="video-content">
+    <div class="hero-text-container">
+      <h1 class="hero-title">
+        <span class="title-line">PERFORMANCE</span>
+        <span class="title-line accent">QUE VIRA ARTE</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Onde a engenharia de precisão encontra a expressão artística
+      </p>
+      
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-count="150">0</span>
+          <span class="stat-label">Projetos</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="12">0</span>
+          <span class="stat-label">Anos</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="100">0</span>
+          <span class="stat-unit">%</span>
+          <span class="stat-label">Artisanal</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator-premium">
+      <div class="scroll-line"></div>
+      <span>Explore nossa arte</span>
+    </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero-parallax">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h2>Performance que vira arte</h2>
-    <p>Peças automotivas, arte industrial e colecionáveis premium</p>
-    <div class="hero-buttons">
-      <a href="#produtos" class="btn">Explorar</a>
-      <a href="sobre.html" class="btn-outline">Sobre</a>
+<!-- SEÇÃO DIFERENCIAIS -->
+<section class="diferenciais">
+  <div class="section-header">
+    <h2 class="section-title">O que nos define</h2>
+    <p class="section-subtitle">Precisão, arte e performance em cada detalhe</p>
+  </div>
+  
+  <div class="diferenciais-grid">
+    <div class="diferencial-item">
+      <div class="diferencial-icon">
+        <i class="fas fa-microscope"></i>
+      </div>
+      <h3>Engenharia de Precisão</h3>
+      <p>Tolerâncias milimétricas e simulação computacional avançada para máxima performance.</p>
+    </div>
+    
+    <div class="diferencial-item">
+      <div class="diferencial-icon">
+        <i class="fas fa-palette"></i>
+      </div>
+      <h3>Design Emocional</h3>
+      <p>Formas que contam histórias e superfícies que despertam sensações táteis únicas.</p>
+    </div>
+    
+    <div class="diferencial-item">
+      <div class="diferencial-icon">
+        <i class="fas fa-gem"></i>
+      </div>
+      <h3>Materiais Premium</h3>
+      <p>Fibra de carbono, titânio e ligas especiais trabalhadas com maestria artesanal.</p>
+    </div>
+    
+    <div class="diferencial-item">
+      <div class="diferencial-icon">
+        <i class="fas fa-medal"></i>
+      </div>
+      <h3>Exclusividade</h3>
+      <p>Peças numeradas e assinadas, criadas em edições limitadas para colecionadores.</p>
     </div>
   </div>
 </section>
 
-<!-- PRODUTOS -->
-<section id="produtos" class="grid">
-  <div class="card">
-    <h3>Peças Automotivas</h3>
-    <p>Componentes funcionais, protótipos e peças conceito desenvolvidas para performance real.</p>
+<!-- PRODUTOS PREMIUM -->
+<section id="produtos" class="produtos-premium">
+  <div class="section-header">
+    <h2 class="section-title">Nossas Coleções</h2>
+    <p class="section-subtitle">Criadas para quem busca o extraordinário</p>
   </div>
-
-  <div class="card">
-    <h3>Arte & Colecionáveis</h3>
-    <p>Quadros, miniaturas e esculturas feitas a partir da estética automotiva.</p>
-  </div>
-
-  <div class="card">
-    <h3>Exclusividade</h3>
-    <p>Produtos únicos criados em tiragens limitadas para verdadeiros entusiastas.</p>
+  
+  <div class="produtos-grid">
+    <div class="produto-card">
+      <div class="produto-image" style="background-image: url('images/produto-engenharia.jpg');">
+        <span class="produto-tag">Engenharia</span>
+      </div>
+      <div class="produto-content">
+        <h3>Componentes de Performance</h3>
+        <p>Colectores, sistemas de admissão e componentes estruturais otimizados para máxima eficiência.</p>
+        <a href="projetos.html" class="produto-link">
+          Ver Projetos <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="produto-card">
+      <div class="produto-image" style="background-image: url('images/produto-arte.jpg');">
+        <span class="produto-tag">Arte</span>
+      </div>
+      <div class="produto-content">
+        <h3>Colecionáveis & Esculturas</h3>
+        <p>Peças artísticas que capturam a essência da mecânica em formas esculturais.</p>
+        <a href="projetos.html" class="produto-link">
+          Ver Projetos <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="produto-card">
+      <div class="produto-image" style="background-image: url('images/produto-design.jpg');">
+        <span class="produto-tag">Design</span>
+      </div>
+      <div class="produto-content">
+        <h3>Design Generativo</h3>
+        <p>Componentes criados por algoritmos de IA para formas orgânicas e estruturalmente otimizadas.</p>
+        <a href="projetos.html" class="produto-link">
+          Ver Projetos <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="sobre">
-  <h2>Sobre a Motor Style</h2>
-  <p>
-    A Motor Style une engenharia automotiva e arte industrial para criar peças que funcionam na pista
-    e impressionam na parede. Cada produto carrega estilo, precisão e identidade.
-  </p>
+<!-- PROCESSO CRIATIVO -->
+<section class="processo">
+  <div class="processo-container">
+    <div class="processo-content">
+      <h2 class="processo-title">Do conceito à obra-prima</h2>
+      <p class="processo-text">
+        Cada peça Motor Style nasce de um processo meticuloso que une tecnologia de ponta 
+        com artesanato tradicional. Da modelagem 3D à fabricação artesanal, cada etapa 
+        é realizada com precisão cirúrgica e paixão pela perfeição.
+      </p>
+      
+      <div class="processo-steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h4>Concepção</h4>
+          <p>Design conceitual e estudos de forma</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">02</div>
+          <h4>Engenharia</h4>
+          <p>Simulação e otimização estrutural</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">03</div>
+          <h4>Fabricação</h4>
+          <p>Manufatura de precisão e acabamento</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">04</div>
+          <h4>Inspeção</h4>
+          <p>Controle de qualidade milimétrico</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="processo-image">
+      <div class="image-frame">
+        <div class="image-overlay"></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <p>© 2025 Motor Style</p>
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2>Pronto para possuir uma obra de arte funcional?</h2>
+    <p>Entre em contato para projetos personalizados ou conhecer nosso portfólio exclusivo.</p>
+    
+    <div class="cta-buttons">
+      <a href="mailto:contato@motorstyle.com" class="btn-cta-primary">
+        <i class="fas fa-envelope"></i> Solicitar Orçamento
+      </a>
+      <a href="sobre.html" class="btn-cta-secondary">
+        <i class="fas fa-book-open"></i> Conhecer História
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER PREMIUM -->
+<footer class="footer-premium">
+  <div class="footer-container">
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Motor Style" height="50">
+        <span class="footer-logo-text">MOTOR STYLE</span>
+      </div>
+      <p class="footer-tagline">Performance transformada em arte</p>
+      <div class="footer-social">
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Explorar</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul class="footer-contact">
+        <li><i class="fas fa-envelope"></i> contato@motorstyle.com</li>
+        <li><i class="fas fa-phone"></i> +55 (11) 99999-9999</li>
+        <li><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Receba novidades exclusivas sobre novos projetos e edições limitadas.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Seu e-mail" required>
+        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2024 Motor Style. Todos os direitos reservados. Performance que vira arte.</p>
+    <div class="footer-legal">
+      <a href="#">Termos de uso</a>
+      <a href="#">Política de privacidade</a>
+    </div>
+  </div>
 </footer>
 
-<!-- JS -->
+<!-- SCRIPTS -->
 <script>
-const hero = document.querySelector(".hero-parallax");
-
-// Parallax com mouse
-window.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 25;
-  const y = (e.clientY / window.innerHeight - 0.5) * 25;
-  hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+// Contador animado para stats
+document.addEventListener('DOMContentLoaded', function() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  
+  const animateCounter = (element) => {
+    const target = parseInt(element.getAttribute('data-count'));
+    const duration = 2000; // 2 segundos
+    const step = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        element.textContent = target;
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current);
+      }
+    }, 16);
+  };
+  
+  // Observador para animar quando o elemento estiver visível
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  statNumbers.forEach(stat => observer.observe(stat));
+  
+  // Menu mobile toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuLinks = document.querySelector('.menu-links');
+  
+  menuToggle.addEventListener('click', () => {
+    menuLinks.classList.toggle('active');
+  });
+  
+  // Smooth scroll para links internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+        
+        // Fechar menu mobile se aberto
+        menuLinks.classList.remove('active');
+      }
+    });
+  });
 });
-
-// Scroll automático ao rolar a primeira vez
-window.addEventListener("wheel", () => {
-  hero.scrollIntoView({ behavior: "smooth" });
-}, { once: true });
 </script>
 
 </body>
 </html>
-
