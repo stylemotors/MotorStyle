@@ -9,7 +9,7 @@
 
 <body>
 
-<!-- MENU FLUTUANTE -->
+<!-- MENU -->
 <nav class="top-menu">
   <img src="logo.png" class="menu-logo">
   <div class="menu-links">
@@ -20,7 +20,7 @@
 
 <!-- VIDEO CAPA -->
 <header class="video-header">
-  <video autoplay muted loop playsinline class="bg-video">
+  <video autoplay muted playsinline class="bg-video">
     <source src="images/capa.mp4" type="video/mp4">
   </video>
 
@@ -80,14 +80,14 @@
 <script>
 const hero = document.querySelector(".hero-parallax");
 
-// Parallax
+// Parallax com mouse
 window.addEventListener("mousemove", (e) => {
   const x = (e.clientX / window.innerWidth - 0.5) * 25;
   const y = (e.clientY / window.innerHeight - 0.5) * 25;
   hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
 });
 
-// Scroll automático ao rolar
+// Scroll automático ao rolar a primeira vez
 window.addEventListener("wheel", () => {
   hero.scrollIntoView({ behavior: "smooth" });
 }, { once: true });
