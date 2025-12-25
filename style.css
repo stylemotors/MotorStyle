@@ -10,36 +10,88 @@ body {
   color: white;
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 60px 20px;
-  border-bottom: 1px solid #222;
+/* MENU */
+.top-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
 }
 
-.logo {
-  width: 120px;
+.menu-logo {
+  width: 60px;
+}
+
+.menu-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.menu-links a:hover {
+  color: #aaa;
+}
+
+/* VIDEO CAPA */
+.video-header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+.video-bottom {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.video-bottom p {
+  font-size: 1.3rem;
+  color: #ddd;
   margin-bottom: 20px;
 }
 
-header h1 {
-  font-size: 3rem;
-  letter-spacing: 5px;
+.scroll-indicator {
+  font-size: 1rem;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
 }
 
-header p {
-  color: #aaa;
-  margin-top: 10px;
-}
-
-/* HERO PARALLAX */
+/* HERO */
 .hero-parallax {
   position: relative;
   height: 100vh;
   background-image: url("images/Master-Car-Creation.jpg");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
 }
 
 .hero-overlay {
@@ -58,7 +110,6 @@ header p {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
 }
 
 .hero-content h2 {
@@ -78,14 +129,17 @@ header p {
 }
 
 /* BOTÕES */
-.btn {
+.btn, .btn-outline {
   padding: 15px 40px;
   border: 2px solid white;
-  background: white;
-  color: black;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+}
+
+.btn {
+  background: white;
+  color: black;
 }
 
 .btn:hover {
@@ -94,11 +148,7 @@ header p {
 }
 
 .btn-outline {
-  padding: 15px 40px;
-  border: 2px solid white;
   color: white;
-  text-decoration: none;
-  transition: 0.3s;
 }
 
 .btn-outline:hover {
@@ -126,20 +176,11 @@ header p {
   transform: translateY(-5px);
 }
 
-.card h3 {
-  margin-bottom: 15px;
-}
-
 /* SOBRE */
 .sobre {
   padding: 80px 20%;
   text-align: center;
   background: #0f0f0f;
-}
-
-.sobre p {
-  color: #ccc;
-  margin-top: 20px;
 }
 
 /* FOOTER */
@@ -150,146 +191,8 @@ footer {
   color: #666;
 }
 
-/* MENU */
-.menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  background: black;
-  border-bottom: 1px solid #222;
-}
-
-.logo-menu {
-  width: 60px;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  margin-left: 30px;
-  letter-spacing: 2px;
-  transition: 0.3s;
-}
-
-.menu a:hover {
-  color: #aaa;
-}
-
-/* SOBRE PAGE */
-.sobre-page {
-  padding: 100px 15%;
-  text-align: center;
-}
-
-.sobre-page h1 {
-  font-size: 3rem;
-  margin-bottom: 50px;
-}
-
-.sobre-page p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #ccc;
-  margin-bottom: 30px;
-}
-
-/* ANIMAÇÕES */
-.fade {
-  animation: fadeIn 1.5s ease forwards;
-}
-
-.slide {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideUp 1s ease forwards;
-}
-
-.slide:nth-child(2) { animation-delay: 0.4s; }
-.slide:nth-child(3) { animation-delay: 0.8s; }
-.slide:nth-child(4) { animation-delay: 1.2s; }
-.slide:nth-child(5) { animation-delay: 1.6s; }
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.video-header {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bg-video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 1;
-}
-
-.video-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-}
-
-.video-content h1 {
-  font-size: 4rem;
-  letter-spacing: 6px;
-}
-
-.video-content p {
-  color: #ccc;
-  margin-top: 15px;
-  font-size: 1.2rem;
-}
-
-.scroll-indicator {
-  margin-top: 50px;
-  font-size: 1rem;
-  opacity: 0.7;
-  animation: bounce 2s infinite;
-}
-
+/* ANIMAÇÃO */
 @keyframes bounce {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(10px); }
-}
-
-.video-header {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
 }
