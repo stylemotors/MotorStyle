@@ -4,7 +4,520 @@
   <meta charset="UTF-8">
   <title>Motor Style</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RESET E CONFIGURAÇÕES GERAIS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      background: #000;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* MENU PREMIUM */
+    .top-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-logo {
+      height: 40px;
+      filter: brightness(0) invert(1);
+    }
+
+    .menu-links {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .menu-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .menu-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+
+    .menu-links a:hover::after {
+      width: 100%;
+    }
+
+    /* VIDEO CAPA - TELA INTEIRA */
+    .video-header {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.2);
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+    }
+
+    /* SCROLL INDICATOR PREMIUM */
+    .scroll-indicator-premium {
+      position: absolute;
+      bottom: 4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      z-index: 10;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: scrollLine 2s infinite;
+    }
+
+    .scroll-indicator-premium span {
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 300;
+      opacity: 0.7;
+    }
+
+    @keyframes scrollLine {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(20px); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* SEÇÕES PREMIUM */
+    section {
+      padding: 8rem 4rem;
+      position: relative;
+    }
+
+    .hero-parallax {
+      background: linear-gradient(
+        45deg,
+        #0a0a0a,
+        #000000
+      );
+      text-align: center;
+      padding: 12rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><rect width="100" height="100" fill="none" stroke="white" stroke-width="0.5" opacity="0.05"/></svg>');
+      background-size: 20px;
+    }
+
+    .hero-content h2 {
+      font-size: 3.5rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .btn, .btn-outline {
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn {
+      background: #fff;
+      color: #000;
+      border: 1px solid #fff;
+    }
+
+    .btn:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* PRODUTOS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      padding: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.02);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.03),
+        transparent
+      );
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover::before {
+      transform: translateX(100%);
+    }
+
+    .card:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card p {
+      color: #aaa;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* DIFERENCIAIS */
+    .diferenciais {
+      text-align: center;
+      background: #0a0a0a;
+    }
+
+    .diferenciais h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .diferencial {
+      padding: 2rem;
+    }
+
+    .diferencial h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .diferencial p {
+      color: #aaa;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* PROCESSO */
+    .processo {
+      text-align: center;
+    }
+
+    .processo h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .processo-steps {
+      display: flex;
+      justify-content: center;
+      gap: 6rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step span {
+      font-size: 4rem;
+      font-weight: 300;
+      color: #fff;
+      opacity: 0.2;
+    }
+
+    .step p {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    /* SOBRE */
+    .sobre {
+      background: #0a0a0a;
+      text-align: center;
+      padding: 8rem 4rem;
+    }
+
+    .sobre h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .sobre p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    /* CTA FINAL */
+    .cta {
+      text-align: center;
+      padding: 10rem 4rem;
+      background: linear-gradient(
+        45deg,
+        #000000,
+        #0a0a0a
+      );
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #fff,
+        transparent
+      );
+    }
+
+    .cta h2 {
+      font-size: 3rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 4rem;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: #000;
+    }
+
+    footer p {
+      color: #666;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 1024px) {
+      .top-menu {
+        padding: 1.5rem 2rem;
+      }
+
+      section {
+        padding: 6rem 2rem;
+      }
+
+      .hero-content h2 {
+        font-size: 2.5rem;
+      }
+
+      .processo-steps {
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-menu {
+        padding: 1rem;
+      }
+
+      .menu-links {
+        gap: 1.5rem;
+      }
+
+      .menu-links a {
+        font-size: 0.8rem;
+      }
+
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .processo-steps {
+        flex-direction: column;
+        gap: 3rem;
+      }
+
+      .cta h2 {
+        font-size: 2rem;
+      }
+
+      .scroll-indicator-premium {
+        bottom: 2rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -21,30 +534,18 @@
 
 <!-- VIDEO CAPA -->
 <header class="video-header">
-  <video autoplay muted playsinline class="bg-video">
+  <video autoplay muted playsinline loop class="bg-video">
     <source src="images/capa.mp4" type="video/mp4">
   </video>
 
   <div class="video-overlay"></div>
-  <div class="video-logo-bg"></div>
 
-  <div class="video-content-premium">
-    <h1 class="hero-main-title">
-      <span>PERFORMANCE</span>
-      <span class="title-accent">QUE VIRA ARTE</span>
-    </h1>
-    <p class="hero-subtitle">
-      Engenharia, design e arte industrial em peças únicas
-    </p>
-  </div>
-
-  <!-- AQUI EMBAIXO -->
+  <!-- APENAS INDICADOR DE SCROLL -->
   <div class="scroll-indicator-premium">
     <div class="scroll-line"></div>
     <span>Role para baixo</span>
   </div>
 </header>
-
 
 <!-- HERO PARALLAX -->
 <section class="hero-parallax">
@@ -59,7 +560,7 @@
   </div>
 </section>
 
-<!-- PRODUTOS (ORIGINAL) -->
+<!-- PRODUTOS -->
 <section id="produtos" class="grid">
   <div class="card">
     <h3>Peças Automotivas</h3>
@@ -84,7 +585,7 @@
   </div>
 </section>
 
-<!-- DIFERENCIAIS (NOVO) -->
+<!-- DIFERENCIAIS -->
 <section class="diferenciais">
   <h2>Por que Motor Style</h2>
 
@@ -112,7 +613,7 @@
   </div>
 </section>
 
-<!-- PROCESSO (NOVO) -->
+<!-- PROCESSO -->
 <section class="processo">
   <h2>Nosso Processo</h2>
 
@@ -144,7 +645,7 @@
   </p>
 </section>
 
-<!-- CTA FINAL (NOVO) -->
+<!-- CTA FINAL -->
 <section class="cta">
   <h2>Quer algo exclusivo?</h2>
   <p>
@@ -158,23 +659,61 @@
   <p>© 2025 Motor Style</p>
 </footer>
 
-<!-- JS (ORIGINAL – INTACTO) -->
+<!-- JS OTIMIZADO -->
 <script>
-const hero = document.querySelector(".hero-parallax");
-
-// Parallax com mouse
-window.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 25;
-  const y = (e.clientY / window.innerHeight - 0.5) * 25;
-  hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+document.addEventListener('DOMContentLoaded', function() {
+  const hero = document.querySelector(".hero-parallax");
+  
+  // Parallax suave com mouse
+  if (hero) {
+    window.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+    });
+  }
+  
+  // Scroll suave para links internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+  
+  // Efeito de fade-in ao rolar
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  // Observar elementos para animação
+  document.querySelectorAll('.card, .diferencial, .step').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
 });
-
-// Scroll automático ao rolar a primeira vez
-window.addEventListener("wheel", () => {
-  hero.scrollIntoView({ behavior: "smooth" });
-}, { once: true });
 </script>
 
 </body>
 </html>
-
