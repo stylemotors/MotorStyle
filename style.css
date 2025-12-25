@@ -106,3 +106,75 @@ footer {
   background: black;
   color: #666;
 }
+
+/* MENU */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: black;
+  border-bottom: 1px solid #222;
+}
+
+.logo-menu {
+  width: 60px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #aaa;
+}
+
+/* SOBRE PAGE */
+.sobre-page {
+  padding: 100px 15%;
+  text-align: center;
+}
+
+.sobre-page h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.sobre-page p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* ANIMAÇÕES */
+.fade {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.slide {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s ease forwards;
+}
+
+.slide:nth-child(2) { animation-delay: 0.4s; }
+.slide:nth-child(3) { animation-delay: 0.8s; }
+.slide:nth-child(4) { animation-delay: 1.2s; }
+.slide:nth-child(5) { animation-delay: 1.6s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
