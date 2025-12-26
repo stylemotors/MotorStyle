@@ -62,8 +62,8 @@ body {
   width: 60%;
   height: auto;
 
-  min-height: 100%;
-  min-width: 100%;
+  min-height: 60%;
+  min-width: 60%;
 
   transform: translate(-50%, -50%);
   object-fit: cover;
@@ -259,6 +259,7 @@ footer {
   text-align: center;
   color: #777;
 }
+
 
 
 
