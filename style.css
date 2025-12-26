@@ -417,6 +417,267 @@ html {
 }
 
 /* ===========================================
+   PÁGINA DE PROJETOS
+=========================================== */
+
+/* Container principal da página */
+.projetos-page {
+  padding: 8rem 4rem;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding-top: 120px; /* Compensa o menu fixo */
+}
+
+/* Título da página */
+.projetos-page h1.fade {
+  font-size: 3.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease 0.2s forwards;
+}
+
+.projetos-page h1.fade::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: #fff;
+}
+
+/* Card de projeto */
+.projeto-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 8rem;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.projeto-card.slide {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projeto-card:nth-child(even) {
+  direction: rtl;
+}
+
+.projeto-card:nth-child(even) .projeto-info {
+  direction: ltr;
+}
+
+/* Container da imagem */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.02);
+}
+
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+.projeto-imagem {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.projeto-imagem:hover {
+  transform: scale(1.05);
+}
+
+/* Informações do projeto */
+.projeto-info {
+  padding: 2rem;
+}
+
+.projeto-info h2 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.projeto-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 1px;
+  background: #fff;
+}
+
+.projeto-info p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.projeto-info p:last-of-type {
+  margin-bottom: 2rem;
+}
+
+/* Destaque de tecnologia */
+.tech-highlight {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #fff;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.tech-highlight strong {
+  color: #fff;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Efeitos de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  .projetos-page {
+    padding: 6rem 3rem;
+    padding-top: 100px;
+  }
+  
+  .projetos-page h1.fade {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+  }
+  
+  .projeto-card {
+    gap: 3rem;
+    margin-bottom: 6rem;
+  }
+  
+  .projeto-imagem {
+    height: 400px;
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .projetos-page {
+    padding: 4rem 2rem;
+    padding-top: 80px;
+  }
+  
+  .projetos-page h1.fade {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  
+  .projeto-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .projeto-card:nth-child(even) {
+    direction: ltr;
+  }
+  
+  .projeto-imagem {
+    height: 300px;
+  }
+  
+  .projeto-info h2 {
+    font-size: 1.8rem;
+  }
+  
+  .projeto-info p {
+    font-size: 1rem;
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+  .projetos-page {
+    padding: 3rem 1rem;
+    padding-top: 70px;
+  }
+  
+  .projetos-page h1.fade {
+    font-size: 2rem;
+  }
+  
+  .projeto-imagem {
+    height: 250px;
+  }
+  
+  .projeto-info {
+    padding: 1rem 0;
+  }
+  
+  .projeto-info h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Ajuste para telas muito grandes */
+@media (min-width: 1600px) {
+  .projetos-page {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* ===========================================
    PÁGINA SOBRE - DESIGN PREMIUM COM ANIMAÇÕES
 =========================================== */
 
@@ -1251,3 +1512,4 @@ html {
     animation: none;
   }
 }
+
