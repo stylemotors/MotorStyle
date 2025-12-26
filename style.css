@@ -26,8 +26,8 @@ body {
 }
 
 .menu-logo {
-  height: 40px;
-  filter: invert(1);
+  height: 50px;
+  filter: none(1);
 }
 
 .menu-links a {
@@ -301,8 +301,7 @@ body {
 }
 
 .footer-logo img {
-  filter: brightness(0) invert(1);
-  transition: transform 0.4s ease;
+  filter: none;
 }
 
 .footer-logo img:hover {
@@ -407,3 +406,4 @@ body {
     height: 34px;
   }
 }
+
