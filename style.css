@@ -26,7 +26,7 @@ body {
 }
 
 .menu-logo {
-  height: 50px;
+  height: 80px;
   filter: none(1);
 }
 
@@ -301,12 +301,16 @@ body {
 }
 
 .footer-logo img {
+  height: 70px;     /* <<< aumenta aqui */
+  width: auto;     /* mantém proporção */
   filter: none;
+  transition: transform 0.4s ease;
 }
 
 .footer-logo img:hover {
   transform: scale(1.05);
 }
+
 
 /* Informações */
 .footer-info {
@@ -411,3 +415,4 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
