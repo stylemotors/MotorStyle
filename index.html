@@ -14,17 +14,29 @@
 
 <body>
 
+<!-- PRELOADER -->
+<div class="preloader">
+  <div class="loader"></div>
+</div>
+
+<!-- BACK TO TOP -->
+<div class="back-to-top">↑</div>
+
 <!-- MENU -->
 <nav class="top-menu">
   <img src="images/logo.png" class="menu-logo" alt="Motor Style">
+
+  <div class="menu-toggle">☰</div>
+
   <div class="menu-links">
-    <a href="projetos.html">Projetos</a>
-    <a href="store.html">Art Store</a>
+    <a href="#hero">Home</a>
+    <a href="#projects">Projetos</a>
+    <a href="#store">Art Store</a>
     <a href="sobre.html">Sobre</a>
   </div>
 </nav>
 
-<!-- VIDEO HERO (Abertura Cinematográfica) -->
+<!-- VIDEO HERO -->
 <section class="video-hero">
 
   <video autoplay muted playsinline class="bg-video">
@@ -40,8 +52,8 @@
 
 </section>
 
-<!-- HERO COM IMAGEM -->
-<section class="hero">
+<!-- HERO IMAGE -->
+<section class="hero" id="hero">
 
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -54,23 +66,23 @@
     </p>
 
     <div class="hero-buttons">
-      <a href="projetos.html" class="btn-primary">Ver Projetos</a>
-      <a href="store.html" class="btn-outline">Art Store</a>
+      <a href="#projects" class="btn-primary">Projetos</a>
+      <a href="#store" class="btn-outline">Art Store</a>
     </div>
   </div>
 
 </section>
 
-<!-- PORTAIS -->
-<section class="portals">
+<!-- PROJECTS -->
+<section class="portals" id="projects">
 
-  <a href="projetos.html" class="portal">
+  <a href="projetos.html" class="portal portal-card">
     <div class="portal-overlay"></div>
     <h2>Projetos</h2>
     <p>Engenharia, aero, protótipos e performance real</p>
   </a>
 
-  <a href="store.html" class="portal art">
+  <a href="store.html" class="portal art portal-card" id="store">
     <div class="portal-overlay"></div>
     <h2>Art Store</h2>
     <p>Arte, esculturas e objetos de desejo automotivo</p>
