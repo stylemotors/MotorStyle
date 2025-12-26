@@ -18,44 +18,78 @@ body {
   padding: 30px 6%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  z-index: 100;
+  z-index: 10;
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
 }
 
-.menu-logo {
-  height: 40px;
-  filter: invert(1);
-}
+.menu-logo { height: 40px; filter: invert(1); }
 
 .menu-links a {
   margin-left: 40px;
   text-decoration: none;
   color: white;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 2px;
   opacity: 0.7;
 }
 
-.menu-links a:hover {
-  opacity: 1;
+/* VIDEO */
+.video-hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg);
+  margin: 20px auto;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0) rotate(-45deg); }
+  50% { transform: translateY(10px) rotate(-45deg); }
 }
 
 /* HERO */
 .hero {
   height: 100vh;
   position: relative;
-  overflow: hidden;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url("images/Master-Car-Creation.jpg") center / cover no-repeat;
-  filter: brightness(0.7);
-  transform: scale(1.05);
+  background: url("images/Master-Car-Creation.jpg") center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -68,12 +102,10 @@ body {
   position: relative;
   z-index: 2;
   height: 100%;
+  padding: 0 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 10%;
 }
 
 .hero h1 {
@@ -82,19 +114,12 @@ body {
   text-transform: uppercase;
 }
 
-.hero h1 span {
-  display: block;
-  font-weight: 300;
-}
-
 .hero p {
-  max-width: 700px;
+  max-width: 600px;
   margin-top: 40px;
   color: #ccc;
-  line-height: 1.8;
 }
 
-/* BOTÕES */
 .hero-buttons {
   margin-top: 50px;
   display: flex;
@@ -102,142 +127,64 @@ body {
 }
 
 .btn-primary {
-  padding: 16px 40px;
   background: white;
   color: black;
+  padding: 16px 40px;
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
 }
 
 .btn-outline {
-  padding: 16px 40px;
   border: 1px solid white;
   color: white;
+  padding: 16px 40px;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
-/* ABOUT */
-.about {
-  padding: 120px 10%;
-  background: #0a0a0a;
-}
-
-.about h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 80px;
-  text-transform: uppercase;
-}
-
-.about-grid {
+/* PORTAIS */
+.portals {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  height: 80vh;
 }
 
-.about-card {
-  padding: 40px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.02);
+.portal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  text-decoration: none;
+  color: white;
+  background: url("images/Master-Car-Creation.jpg") center/cover;
 }
 
-/* CTA */
-.cta {
-  padding: 120px 10%;
-  text-align: center;
+.portal.art {
+  background: url("images/art-bg.jpg") center/cover;
 }
 
-.cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+.portal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.portal h2, .portal p {
+  position: relative;
+  z-index: 2;
+}
+
+.portal h2 {
+  font-size: 3rem;
+}
+
+.portal p {
+  color: #ccc;
+  margin-top: 10px;
 }
 
 /* FOOTER */
 footer {
   padding: 40px;
   text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.1);
   color: #777;
 }
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-content h1 {
-  animation: fadeUp 1s ease forwards;
-}
-
-.hero-content p {
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.hero-buttons {
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.6s;
-  opacity: 0;
-}
-
-.hero-bg {
-  animation: slowZoom 20s ease-in-out infinite alternate;
-}
-
-@keyframes slowZoom {
-  from {
-    transform: scale(1.05);
-  }
-  to {
-    transform: scale(1.15);
-  }
-}
-
-.about-card {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.about-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll('.about-card').forEach(card => {
-  observer.observe(card);
-});
-</script>
-
-  .btn-primary, .btn-outline {
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(255,255,255,0.15);
-}
-
-.btn-outline:hover {
-  background: rgba(255,255,255,0.1);
-  transform: translateY(-4px);
-}
-
