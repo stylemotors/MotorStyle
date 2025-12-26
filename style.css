@@ -1,108 +1,253 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Preloader
-    window.addEventListener('load', function() {
-        const preloader = document.querySelector('.preloader');
-        preloader.classList.add('hidden');
-        
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
-    });
-    
-    // Menu scroll effect
-    const menu = document.querySelector('.top-menu');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            menu.classList.add('scrolled');
-        } else {
-            menu.classList.remove('scrolled');
-        }
-    });
-    
-    // Scroll suave para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Back to top button
-    const backToTopButton = document.querySelector('.back-to-top');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 500) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
-    });
-    
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // Parallax effect para video hero
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const videoHero = document.querySelector('.video-hero');
-        
-        if (videoHero) {
-            const rate = scrolled * -0.5;
-            videoHero.style.transform = `translate3d(0, ${rate}px, 0)`;
-        }
-    });
-    
-    // Menu mobile toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuLinks = document.querySelector('.menu-links');
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            menuLinks.style.display = menuLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-    }
-    
-    // Animações ao scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-    
-    // Observar elementos para animação
-    document.querySelectorAll('.portal-card, .highlight-item').forEach(el => {
-        observer.observe(el);
-    });
-    
-    // Video autoplay fallback
-    const video = document.querySelector('.bg-video');
-    if (video) {
-        video.play().catch(e => {
-            console.log('Autoplay prevented, showing fallback');
-        });
-    }
-});
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ================= MENU ================= */
+
+.top-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 30px 6%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 20;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.menu-logo {
+  height: 40px;
+  filter: invert(1);
+}
+
+.menu-links a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  transition: opacity .3s;
+}
+
+.menu-links a:hover { opacity: 1; }
+
+/* ================= VIDEO HERO ================= */
+
+.video-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  will-change: transform;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.9)
+  );
+  z-index: 2;
+}
+
+/* Scroll indicator */
+.scroll-down {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ccc;
+  z-index: 3;
+}
+
+.arrow {
+  width: 22px;
+  height: 22px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg);
+  margin: 18px auto;
+  animation: arrowPulse 1.6s infinite;
+}
+
+@keyframes arrowPulse {
+  0% { transform: translateY(0) rotate(-45deg); opacity: 0.3; }
+  50% { transform: translateY(10px) rotate(-45deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(-45deg); opacity: 0.3; }
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  position: relative;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("images/Master-Car-Creation.jpg") center/cover no-repeat;
+  animation: slowZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.15); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1,
+.hero p,
+.hero-buttons {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero h1 { animation-delay: .3s; }
+.hero p { animation-delay: .6s; }
+.hero-buttons { animation-delay: .9s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-size: 4rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  max-width: 600px;
+  margin-top: 40px;
+  color: #ccc;
+}
+
+/* Buttons */
+.hero-buttons {
+  margin-top: 50px;
+  display: flex;
+  gap: 30px;
+}
+
+.btn-primary {
+  background: white;
+  color: black;
+  padding: 16px 40px;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+  padding: 16px 40px;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.btn-primary:hover,
+.btn-outline:hover {
+  transform: translateY(-4px);
+}
+
+/* ================= PORTALS ================= */
+
+.portals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 85vh;
+}
+
+.portal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  text-decoration: none;
+  color: white;
+  background: url("images/Master-Car-Creation.jpg") center/cover;
+  transition: transform .6s ease;
+}
+
+.portal.art {
+  background: url("images/art-bg.jpg") center/cover;
+}
+
+.portal:hover {
+  transform: scale(1.03);
+}
+
+.portal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  transition: background .6s;
+}
+
+.portal:hover .portal-overlay {
+  background: rgba(0,0,0,0.6);
+}
+
+.portal h2,
+.portal p {
+  position: relative;
+  z-index: 2;
+}
+
+.portal h2 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+/* Footer */
+footer {
+  padding: 40px;
+  text-align: center;
+  color: #777;
+}
