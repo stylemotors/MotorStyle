@@ -26,7 +26,7 @@ body {
 }
 
 .menu-logo {
-  height: 80px;
+  height: 60px;
   filter: none(1);
 }
 
@@ -301,7 +301,7 @@ body {
 }
 
 .footer-logo img {
-  height: 70px;     /* <<< aumenta aqui */
+  height: 80px;     /* <<< aumenta aqui */
   width: auto;     /* mantém proporção */
   filter: none;
   transition: transform 0.4s ease;
@@ -676,3 +676,4 @@ html {
     margin: 0 auto;
   }
 }
+
