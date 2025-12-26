@@ -1,81 +1,266 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Motor Style – Engineering & Design Lab</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estúdio de engenharia automotiva, protótipos, aeropeças, bodykits e arte automotiva.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Motor Style – Engineering & Design Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estúdio de engenharia automotiva, protótipos, aeropeças, bodykits e arte automotiva.">
+    
+    <!-- Meta tags para SEO e redes sociais -->
+    <meta property="og:title" content="Motor Style – Engineering & Design Lab">
+    <meta property="og:description" content="Desenvolvemos componentes automotivos sob medida, aeropeças, bodykits e protótipos de alta performance.">
+    <meta property="og:image" content="https://seusite.com/images/og-image.jpg">
+    <meta property="og:url" content="https://seusite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Fontes premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>
-
-<!-- MENU -->
-<nav class="top-menu">
-  <img src="images/logo.png" class="menu-logo">
-  <div class="menu-links">
-    <a href="projetos.html">Projetos</a>
-    <a href="store.html">Art Store</a>
-    <a href="sobre.html">Sobre</a>
-  </div>
-</nav>
-
-<!-- SEÇÃO 1 - VIDEO ABERTURA -->
-<section class="video-hero">
-  <video autoplay muted playsinline class="bg-video">
-    <source src="images/capa.mp4" type="video/mp4">
-  </video>
-
-  <div class="video-overlay"></div>
-
-  <div class="scroll-down">
-    <span>Role para explorar</span>
-    <div class="arrow"></div>
-  </div>
-</section>
-
-<!-- SEÇÃO 2 - HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h1>Engineering<br><span>& Design Lab</span></h1>
-    <p>
-      Desenvolvemos componentes automotivos sob medida — de suportes FuelTech
-      a coletores, aeropeças, bodykits e protótipos de alta performance.
-    </p>
-    <div class="hero-buttons">
-      <a href="projetos.html" class="btn-primary">Ver Projetos</a>
-      <a href="store.html" class="btn-outline">Art Store</a>
+    <!-- Loader premium -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+            <div class="loader-line"></div>
+        </div>
     </div>
-  </div>
-</section>
 
-<!-- SEÇÃO 3 - PORTAIS -->
-<section class="portals">
-  <a href="projetos.html" class="portal">
-    <div class="portal-overlay"></div>
-    <h2>Projetos</h2>
-    <p>Engenharia, aero, protótipos e performance real</p>
-  </a>
+    <!-- Menu premium -->
+    <nav class="top-menu">
+        <div class="menu-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" class="menu-logo" alt="Motor Style Logo">
+            </a>
+            
+            <div class="menu-links">
+                <a href="projetos.html" class="menu-link">
+                    <span class="link-text">Projetos</span>
+                    <span class="link-hover"></span>
+                </a>
+                <a href="store.html" class="menu-link">
+                    <span class="link-text">Art Store</span>
+                    <span class="link-hover"></span>
+                </a>
+                <a href="sobre.html" class="menu-link">
+                    <span class="link-text">Sobre</span>
+                    <span class="link-hover"></span>
+                </a>
+                <a href="contato.html" class="menu-link cta">
+                    <span class="link-text">Contato</span>
+                </a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-  <a href="store.html" class="portal art">
-    <div class="portal-overlay"></div>
-    <h2>Art Store</h2>
-    <p>Esculturas, quadros e objetos de desejo automotivo</p>
-  </a>
-</section>
+    <!-- Seção hero com video em tela cheia -->
+    <section class="video-hero">
+        <div class="video-container">
+            <video autoplay muted playsinline loop class="bg-video">
+                <source src="images/capa.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+            
+            <!-- Overlay gradiente premium -->
+            <div class="video-overlay">
+                <div class="gradient-overlay"></div>
+            </div>
+            
+            <!-- Conteúdo sobre o vídeo -->
+            <div class="video-content">
+                <div class="content-wrapper">
+                    <h1 class="video-title">
+                        <span class="title-line">Engineering</span>
+                        <span class="title-line accent">& Design Lab</span>
+                    </h1>
+                    <p class="video-subtitle">
+                        Performance meets aesthetics in every component we create
+                    </p>
+                    <div class="video-buttons">
+                        <a href="#projetos" class="btn-primary">
+                            <span>Ver Projetos</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contato" class="btn-outline">
+                            <span>Entre em Contato</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator premium -->
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow-down">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <p>© 2025 Motor Style — Engineering & Design Lab</p>
-</footer>
+    <!-- Seção de portais premium -->
+    <section class="portals-section" id="projetos">
+        <div class="section-header">
+            <h2 class="section-title">Nossas Áreas</h2>
+            <p class="section-subtitle">Explore nosso universo de criação</p>
+        </div>
+        
+        <div class="portals-grid">
+            <a href="projetos.html" class="portal-card">
+                <div class="portal-image">
+                    <img src="images/projetos-bg.jpg" alt="Projetos de Engenharia">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="portal-content">
+                    <div class="portal-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Projetos</h3>
+                    <p>Engenharia, aero, protótipos e performance real</p>
+                    <div class="portal-link">
+                        <span>Explorar</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="portal-hover"></div>
+            </a>
+            
+            <a href="store.html" class="portal-card art">
+                <div class="portal-image">
+                    <img src="images/art-bg.jpg" alt="Art Store">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="portal-content">
+                    <div class="portal-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Art Store</h3>
+                    <p>Esculturas, quadros e objetos de desejo automotivo</p>
+                    <div class="portal-link">
+                        <span>Explorar</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="portal-hover"></div>
+            </a>
+        </div>
+    </section>
 
+    <!-- Seção de destaques -->
+    <section class="highlights">
+        <div class="container">
+            <div class="highlight-item">
+                <div class="highlight-number">150+</div>
+                <div class="highlight-title">Projetos Concluídos</div>
+                <div class="highlight-desc">Soluções personalizadas</div>
+            </div>
+            <div class="highlight-item">
+                <div class="highlight-number">8</div>
+                <div class="highlight-title">Anos de Experiência</div>
+                <div class="highlight-desc">Mercado automotivo</div>
+            </div>
+            <div class="highlight-item">
+                <div class="highlight-number">100%</div>
+                <div class="highlight-title">Sob Medida</div>
+                <div class="highlight-desc">Componentes personalizados</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer premium -->
+    <footer class="premium-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="images/logo.png" class="footer-logo" alt="Motor Style">
+                    <p class="footer-tagline">Engineering & Design Lab</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="projetos.html">Projetos</a></li>
+                            <li><a href="store.html">Art Store</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Serviços</h4>
+                        <ul>
+                            <li><a href="#">Engenharia</a></li>
+                            <li><a href="#">Design</a></li>
+                            <li><a href="#">Prototipagem</a></li>
+                            <li><a href="#">Consultoria</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Contato</h4>
+                        <ul>
+                            <li><a href="mailto:contato@motorstyle.com">contato@motorstyle.com</a></li>
+                            <li><a href="tel:+5511999999999">+55 (11) 99999-9999</a></li>
+                            <li>São Paulo, Brasil</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>© 2025 <strong>Motor Style</strong> – Engineering & Design Lab. Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+            
+            <!-- Voltar ao topo -->
+            <button class="back-to-top" aria-label="Voltar ao topo">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
-
