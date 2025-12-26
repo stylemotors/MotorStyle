@@ -677,3 +677,7 @@ html {
   }
 }
 
+.projetos-page {
+  padding-top: 140px; /* espaço para o menu fixo */
+}
+
