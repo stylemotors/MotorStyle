@@ -59,7 +59,7 @@ body {
   left: 50%;
 
   /* o vídeo fica MENOR que o container */
-  width: 80%;
+  width: 60%;
   height: auto;
 
   min-height: 100%;
@@ -259,6 +259,7 @@ footer {
   text-align: center;
   color: #777;
 }
+
 
 
 
