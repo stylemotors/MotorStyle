@@ -8,6 +8,7 @@
 body {
   background: #000;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* MENU */
@@ -23,7 +24,10 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.menu-logo { height: 40px; filter: invert(1); }
+.menu-logo {
+  height: 40px;
+  filter: invert(1);
+}
 
 .menu-links a {
   margin-left: 40px;
@@ -38,42 +42,45 @@ body {
 
 .menu-links a:hover { opacity: 1; }
 
-/* VIDEO */
+/* ================= VIDEO HERO ================= */
+
 .video-hero {
-  height: 80vh; /* altura da seção */
+  width: 100%;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   background: black;
 }
 
-/* O vídeo agora é recortado corretamente */
 .bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transform: scale(0.92);
 }
-
 
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.9)
+  );
 }
 
 /* Scroll */
 .scroll-down {
   position: absolute;
-  bottom: 40px;
+  bottom: 50px;
   width: 100%;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #ccc;
+  z-index: 3;
 }
 
 .arrow {
@@ -82,17 +89,18 @@ body {
   border-left: 2px solid white;
   border-bottom: 2px solid white;
   transform: rotate(-45deg);
-  margin: 20px auto;
-  animation: arrowPulse 1.5s infinite;
+  margin: 18px auto;
+  animation: arrowPulse 1.6s infinite;
 }
 
 @keyframes arrowPulse {
-  0% { transform: translateY(0) rotate(-45deg); opacity: 0.4; }
+  0% { transform: translateY(0) rotate(-45deg); opacity: 0.3; }
   50% { transform: translateY(10px) rotate(-45deg); opacity: 1; }
-  100% { transform: translateY(0) rotate(-45deg); opacity: 0.4; }
+  100% { transform: translateY(0) rotate(-45deg); opacity: 0.3; }
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero {
   height: 100vh;
   position: relative;
@@ -102,7 +110,7 @@ body {
   position: absolute;
   inset: 0;
   background: url("images/Master-Car-Creation.jpg") center/cover no-repeat;
-  animation: slowZoom 20s ease-in-out infinite alternate;
+  animation: slowZoom 18s ease-in-out infinite alternate;
 }
 
 @keyframes slowZoom {
@@ -113,7 +121,7 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
 }
 
 .hero-content {
@@ -154,13 +162,13 @@ body {
   color: #ccc;
 }
 
+/* Buttons */
 .hero-buttons {
   margin-top: 50px;
   display: flex;
   gap: 30px;
 }
 
-/* Buttons */
 .btn-primary {
   background: white;
   color: black;
@@ -182,11 +190,12 @@ body {
   transform: translateY(-4px);
 }
 
-/* Portals */
+/* ================= PORTALS ================= */
+
 .portals {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 80vh;
+  height: 85vh;
 }
 
 .portal {
@@ -198,12 +207,16 @@ body {
   text-decoration: none;
   color: white;
   background: url("images/Master-Car-Creation.jpg") center/cover;
-  transition: transform .6s;
+  transition: transform .6s ease;
 }
 
-.portal.art { background: url("images/art-bg.jpg") center/cover; }
+.portal.art {
+  background: url("images/art-bg.jpg") center/cover;
+}
 
-.portal:hover { transform: scale(1.03); }
+.portal:hover {
+  transform: scale(1.03);
+}
 
 .portal-overlay {
   position: absolute;
@@ -212,11 +225,20 @@ body {
   transition: background .6s;
 }
 
-.portal:hover .portal-overlay { background: rgba(0,0,0,0.6); }
+.portal:hover .portal-overlay {
+  background: rgba(0,0,0,0.6);
+}
 
-.portal h2, .portal p { position: relative; z-index: 2; }
+.portal h2,
+.portal p {
+  position: relative;
+  z-index: 2;
+}
 
-.portal h2 { font-size: 3rem; }
+.portal h2 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
 
 /* Footer */
 footer {
@@ -224,4 +246,3 @@ footer {
   text-align: center;
   color: #777;
 }
-
