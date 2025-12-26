@@ -46,12 +46,12 @@ body {
 /* ================= VIDEO HERO ================= */
 
 .video-hero {
+  height: 80vh;
   position: relative;
-  width: 100%;
-  height: 100vh;
   overflow: hidden;
   background: black;
 }
+
 
 .bg-video {
   position: absolute;
@@ -59,9 +59,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.1);
-  will-change: transform;
+
+  /* aqui está o segredo */
+  transform: scale(1.15);
 }
+
 
 .video-overlay {
   position: absolute;
@@ -251,3 +253,4 @@ footer {
   text-align: center;
   color: #777;
 }
+
