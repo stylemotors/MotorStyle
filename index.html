@@ -2,98 +2,81 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Motor Style — Engineering & Design Lab</title>
+<title>Motor Style</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- PRELOADER -->
-<div class="preloader">
-  <div class="loader"></div>
-</div>
-
-<!-- BACK TO TOP -->
-<div class="back-to-top">↑</div>
-
 <!-- MENU -->
 <nav class="top-menu">
-  <img src="images/logo.png" class="menu-logo" alt="Motor Style">
-
-  <div class="menu-toggle">☰</div>
-
+  <img src="logo.png" class="menu-logo">
   <div class="menu-links">
-    <a href="#hero">Home</a>
+    <a href="#">Início</a>
     <a href="#projects">Projetos</a>
-    <a href="#store">Art Store</a>
+    <a href="#art">Art Store</a>
     <a href="sobre.html">Sobre</a>
   </div>
 </nav>
 
-<!-- VIDEO HERO -->
+<!-- HERO VIDEO -->
 <section class="video-hero">
-
-  <video autoplay muted playsinline class="bg-video">
-    <source src="images/capa.mp4" type="video/mp4">
+  <video class="bg-video" autoplay muted playsinline loop>
+    <source src="videos/intro.mp4" type="video/mp4">
   </video>
 
   <div class="video-overlay"></div>
 
-  <div class="scroll-down">
-    <span>Role para explorar</span>
-    <div class="arrow"></div>
+  <div class="video-text">
+    <h1>MOTOR STYLE</h1>
+    <p>Engineering meets art</p>
   </div>
 
+  <div class="scroll-down">
+    Scroll
+    <div class="arrow"></div>
+  </div>
 </section>
 
 <!-- HERO IMAGE -->
-<section class="hero" id="hero">
-
+<section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1>Engineering<br><span>& Design Lab</span></h1>
-    <p>
-      Criamos componentes automotivos sob medida — de suportes FuelTech,
-      coletores de admissão, aeropeças, bodykits e protótipos de alta performance.
-    </p>
+    <h1>Car Creation Studio</h1>
+    <p>Projetamos e fabricamos peças para veículos clássicos, protótipos e arte automotiva.</p>
 
     <div class="hero-buttons">
       <a href="#projects" class="btn-primary">Projetos</a>
-      <a href="#store" class="btn-outline">Art Store</a>
+      <a href="#art" class="btn-outline">Art Store</a>
     </div>
   </div>
-
 </section>
 
-<!-- PROJECTS -->
-<section class="portals" id="projects">
-
-  <a href="projetos.html" class="portal portal-card">
+<!-- PORTAIS -->
+<section class="portals">
+  <a href="projetos.html" class="portal">
     <div class="portal-overlay"></div>
     <h2>Projetos</h2>
-    <p>Engenharia, aero, protótipos e performance real</p>
+    <p>Protótipos, bodykits, aerofólios, coletores, suportes e engenharia.</p>
   </a>
 
-  <a href="store.html" class="portal art portal-card" id="store">
+  <a href="#" class="portal art">
     <div class="portal-overlay"></div>
     <h2>Art Store</h2>
-    <p>Arte, esculturas e objetos de desejo automotivo</p>
+    <p>Peças de arte, decoração e design automotivo premium.</p>
   </a>
-
 </section>
 
 <footer>
-  <p>© 2025 Motor Style — Engineering & Design Lab</p>
+  © 2025 Motor Style
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
