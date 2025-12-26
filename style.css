@@ -123,13 +123,15 @@ body {
   position: absolute;
   inset: 0;
   background: url("images/Master-Car-Creation.jpg") center/cover no-repeat;
-  animation: slowZoom 18s ease-in-out infinite alternate;
+  transform: scale(1);
+  transition: transform 4s cubic-bezier(.19,1,.22,1);
 }
 
-@keyframes slowZoom {
-  from { transform: scale(1.05); }
-  to { transform: scale(1.15); }
+/* quando o mouse entra na seção */
+.hero:hover .hero-bg {
+  transform: scale(1.12);
 }
+
 
 .hero-overlay {
   position: absolute;
@@ -259,6 +261,7 @@ footer {
   text-align: center;
   color: #777;
 }
+
 
 
 
