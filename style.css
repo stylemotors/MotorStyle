@@ -232,7 +232,7 @@ body {
 
 
 .portal.art {
-  background-image: url("images/capa-art.jpg");
+  background-image: url("images/capa-art.webp");
   background-size: cover;
   background-position: center;
 }
@@ -1520,5 +1520,6 @@ html {
     animation: none;
   }
 }
+
 
 
