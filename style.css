@@ -221,12 +221,20 @@ body {
   padding: 60px;
   text-decoration: none;
   color: white;
-  background: url("images/Master-Car-Creation.jpg") center/cover;
+
+  background-image: url("images/capa-projeto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   transition: transform .6s ease;
 }
 
+
 .portal.art {
-  background: url("images/art-bg.jpg") center/cover;
+  background-image: url("images/capa-art.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .portal:hover {
@@ -1512,4 +1520,5 @@ html {
     animation: none;
   }
 }
+
 
